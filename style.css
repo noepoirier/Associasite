@@ -1,0 +1,256 @@
+:root {
+    --page_color: white;
+    --bg_color: royalblue;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg_color);
+    padding: 0;
+    margin: 0;
+}
+
+.menu_site {
+    background-color: var(--page_color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre portée légère */
+    width: fit-content(100%);
+    margin: 0;
+    display: flex; /* Transformer l'élément en conteneur flex */
+    justify-content: center; /* Centrer les éléments horizontalement */
+    align-items: center; /* Centrer les éléments verticalement */
+    
+    ul {
+        display: flex; /* Transformer l'élément en conteneur flex */
+        align-items: center;
+        list-style: none; /* Suppression des puces de liste */
+    }
+
+    li {
+        display: inline-block; /* Affichage en ligne et bloc */
+        margin-right: 20px; /* Marge à droite pour espacer les éléments */
+    }
+
+    a {
+        text-decoration: none; /* Suppression du soulignement par défaut */
+        color: #333;
+        font-weight: bold;
+        transition: color 0.3s ease-in-out; /* Transition de couleur au survol */
+    }
+
+    a:hover {
+        color: var(--bg_color); /* Nouvelle couleur du texte au survol */
+    }
+
+    a:active {
+        color : var(--bg_color);
+    }
+
+    .separation_menu {
+        width: 3px; /* Largeur de la séparation */
+        height: 30px; /* Hauteur de la séparation */
+        border-radius: 45px;
+        background-color: var(--bg_color); /* Couleur de la séparation */
+        display: inline-block; /* Pour s'assurer qu'elle est affichée en ligne avec les autres éléments du menu */
+        margin-right: 20px;
+    }
+}
+
+.active::after {
+    content: "\2022"; /* Utilisation du caractère Unicode pour représenter un point */
+    display: block; /* Affichage en tant que bloc pour être placé après le lien */
+    color: var(--bg_color);
+    text-align: center;
+    transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out; /* opacity à la transition pour animer l'apparition du point */
+    opacity: 1; /* opacity à 1 pour que le point soit visible */
+}
+
+.logo {
+    width: 200px;
+    border-radius: 45px;
+}
+
+.name_rectangle {
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    padding: 0px 20px;
+    border: 7.5px solid var(--page_color);
+    background-color: transparent;
+    margin: 0 auto;
+    border-radius: 45px;
+    font-size: 1.3em;
+}
+
+.gestion_name {
+    display: flex; /* Transformer l'élément en conteneur flex */
+    justify-content: center;
+    align-items: center;
+
+    img {
+        object-fit: contain;
+        width: 100px;
+        margin-right: 2%;
+        border-radius: 45px;
+    }
+}
+
+.separation_rectangle {
+    margin: 0 auto;
+    width: 75%;
+    height: 25px;
+    border-radius: 45px;
+    background-color: var(--page_color);
+    clear: both; /* L'élément doit être placé sous les éléments flottants */
+}
+
+.content_rectangle {
+    background-color: var(--page_color);
+    position: relative;
+    padding: 30px;
+}
+
+.content_rectangle::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg_color);
+    opacity: 0.1;
+}
+
+.content{
+    position: relative;
+    padding: 30px;
+
+
+    .formulaire {
+        .add_items {
+            display: flex;
+        }
+
+        .add_items > div {
+            flex: 1;
+        }
+
+        .logo_upload {
+            background: linear-gradient(145deg, #ffffff, #e6e6e6); /* Dégradé subtil */
+            color: #000; /* Couleur du texte */
+            border: none; /* Pas de bordure */
+            border-radius: 8px; /* Bordures légèrement arrondies */
+            padding: 10px 20px; /* Padding pour le bouton */
+            font-size: 15px; /* Taille du texte */
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre externe légère */
+            transition: all 0.3s ease; /* Transition douce pour les changements */
+            outline: none; /* Supprime la bordure bleue lors du clic */
+        }
+
+        .logo_upload:hover {
+            background: linear-gradient(145deg, #e6e6e6, #ffffff); /* Dégradé inversé lors du survol */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Augmente légèrement l'ombre externe au survol */
+        }
+
+        .logo_upload:active {
+            background: linear-gradient(145deg, #dcdcdc, #ffffff); /* Couleur de fond lors du clic */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Réduit l'ombre externe lors du clic */
+            transform: translateY(2px); /* Légère translation vers le bas pour l'effet de clic */
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .color_select {
+            display: flex;
+        }
+
+        .color_select > div {
+            flex: 1;
+        }
+
+        select {
+            background: linear-gradient(145deg, #ffffff, #e6e6e6); /* Dégradé subtil */
+            color: #000; /* Couleur du texte */
+            border: none; /* Pas de bordure */
+            border-radius: 8px; /* Bordures légèrement arrondies */
+            padding: 10px 15px; /* Padding pour le bouton */
+            font-size: 15px; /* Taille du texte */
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre externe légère */
+            transition: all 0.3s ease; /* Transition douce pour les changements */
+            outline: none; /* Supprime la bordure bleue lors du clic */
+        }
+
+        select:hover {
+            background: linear-gradient(145deg, #e6e6e6, #ffffff); /* Dégradé inversé lors du survol */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Augmente légèrement l'ombre externe au survol */
+        }
+
+        h2 {
+            margin-bottom: 40px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="number"] {
+            background: linear-gradient(145deg, #ffffff, #e6e6e6); /* Dégradé subtil */
+            color: #000; /* Couleur du texte */
+            border: none; /* Pas de bordure */
+            border-radius: 8px; /* Bordures légèrement arrondies */
+            padding: 8px 12px; /* Réduire le padding pour les champs de formulaire */
+            font-size: 13px; /* Taille de la police plus petite */
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre externe légère */
+            transition: all 0.3s ease; /* Transition douce pour les changements */
+            outline: none; /* Supprime la bordure bleue lors du clic */
+            margin-bottom: 10px; /* Ajoute un espacement de 10 pixels en bas de chaque champ */
+        }
+
+        input[type="text"]:hover,
+        input[type="password"]:hover,
+        input[type="number"]:hover {
+            background: linear-gradient(145deg, #e6e6e6, #ffffff); /* Dégradé inversé lors du survol */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Augmente légèrement l'ombre externe au survol */
+        }
+
+        input[type="text"]:active,
+        input[type="password"]:active,
+        input[type="number"]:active {
+            background: linear-gradient(145deg, #dcdcdc, #ffffff); /* Couleur de fond lors du clic */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Réduit l'ombre externe lors du clic */
+            transform: translateY(2px); /* Légère translation vers le bas pour l'effet de clic */
+        }
+
+        ul {
+            list-style: none; /* Suppression des puces de liste */
+        }
+
+        .bouton {
+            background: linear-gradient(145deg, #ffffff, #e6e6e6); /* Dégradé subtil */
+            color: #000; /* Couleur du texte */
+            border: none; /* Pas de bordure */
+            border-radius: 8px; /* Bordures légèrement arrondies */
+            padding: 10px 20px; /* Padding pour le bouton */
+            font-size: 15px; /* Taille du texte */
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre externe légère */
+            transition: all 0.3s ease; /* Transition douce pour les changements */
+            outline: none; /* Supprime la bordure bleue lors du clic */
+        }
+
+        .bouton:hover {
+            background: linear-gradient(145deg, #e6e6e6, #ffffff); /* Dégradé inversé lors du survol */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Augmente légèrement l'ombre externe au survol */
+        }
+
+        .bouton:active {
+            background: linear-gradient(145deg, #dcdcdc, #ffffff); /* Couleur de fond lors du clic */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Réduit l'ombre externe lors du clic */
+            transform: translateY(2px); /* Légère translation vers le bas pour l'effet de clic */
+        }
+    }
+}
