@@ -1,8 +1,8 @@
 <?php
 // Informations de connection à la base de données
 $servername = "localhost";
-$username = "root";
-$password = "mysql";
+$username = "user";
+$password = "passxord";
 $dbname = "AssociaSite";
 
 // Créer la connection
